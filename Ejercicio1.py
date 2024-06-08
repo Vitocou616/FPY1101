@@ -1,24 +1,27 @@
+#Crear agenda que encierre datos en una lista:
+#Estructura:
 
-impares=0
-pares=0
+agenda_personas = []
 
-while True:
+cantidad_usuario = 4
+cont = 0
+
+while cont < cantidad_usuario:
+
+    cont += 1
+    #Pedir datos
+    nombre = input("Ingrese su nombre: ")
+    telefono = input("Ingrese su nombre: ")
+    email = input("Ingrese su nombre: ")
+    direccion = input("Ingrese su nombre: ")
     try:
-
-     numeros = int(input("Ingresa numeros al azar para que el programa vea cuales son pares e impares: "))
-
-     if numeros == 0:
-        break
-
-     if numeros % 2 == 0:
-        print("Este numero es par juju")
-        pares += 1
-    
-     else:
-        print("Este numero es impar.")
-        impares += 1
+        estado = bool(input("Estado usuario (Habilitado = 1 / Inhabilitado = 0): "))
     except ValueError:
-        print("Error: Debe ingresar solo números para que el programa funcione correctamente.")
+        print("El valor para el estado debe ser 1 o 0.")
 
-print("Total de pares:", pares)
-print("Total de impares:", impares)
+    datos_persona = { nombre : {
+        "telefono": telefono,
+        "email": email,
+        "direccion": direccion,
+        "estado": estado
+    }}
